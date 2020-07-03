@@ -1,0 +1,22 @@
+<h1>Index PAge</h1>
+<p>Find me in app/views/manage/index.html.erb</p>
+
+<%= "hey ruby" %>
+<a href="manage/home"> go to home</a>
+<% (1..5).each do |i| %>
+  <br>
+  <%= "#{i} hey ruby" %>
+<% end %>
+
+<% for i in (1..5) %>
+  <h2><%= i %></h2>
+<%end %>
+
+<% for i in @arr %>
+  <%= i %>
+<%end %>
+
+<% if @id and @name %>
+  <h1> Your Id :<%= @id %></h1>
+  <h1>Your Name : <%= @name %></h1>
+<%end %>
