@@ -2,6 +2,12 @@
 #
 #
 Rails.application.routes.draw do
+  #get 'posts/index'
+  #get 'posts/show'
+  #get 'posts/new'
+  #get 'posts/edit'
+  #get 'posts/destroy'
+  resources :posts
   resources :users
   #get 'manage/index'
   #match 'manage/index', :to=> 'manage#index', :via=> get

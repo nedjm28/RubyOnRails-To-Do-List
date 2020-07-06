@@ -1,0 +1,27 @@
+<h1>Posts#index</h1>
+<p>Find me in app/views/posts/index.html.erb</p>
+<%= image_tag("img1.png",:height=>"100px", :width=>"100%", :alt=> "screentshoot", :class=> "img-thumbnail") %>
+<table class="table table-striped">
+  <tr>
+    <td style="font-weight: bold">title</td>
+    <td style="font-weight: bold">ctegory</td>
+    <td style="font-weight: bold">created at</td>
+    <td style="font-weight: bold">update at</td>
+    <td style="font-weight: bold">Action</td>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.title_post %></td>
+    <td><%= post.category %></td>
+    <td><%= post.created_at %></td>
+    <td><%= post.updated_at %></td>
+    <td><%= link_to 'Show', post %> <%= link_to 'Edit', edit_post_path(post) %> <%= link_to 'Delete', post, method: :delete, data:{confirm: 'Are you Sure? '} %></td>
+
+  </tr>
+
+<%end %>
+
+</table>
+
+<%= link_to 'add new post',new_post_path, :class => "btn btn-primary",:style => "color:white" %>

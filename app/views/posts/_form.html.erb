@@ -1,0 +1,23 @@
+<%#= @post.errors.full_messages.first if @post.errors.any? %>
+<% if @post.errors.full_messages.any? %>
+  <% @post.errors.full_messages.each do |error_message| %>
+    <%= error_message if @post.errors.full_messages.first == error_message %> <br />
+  <% end %>
+<% end %>
+<%= form_for(post) do |f| %>
+  <div class="field form-group">
+    <%= f.label :title_post %>
+    <%= f.text_field :title_post, :class=>"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category %>
+    <%= f.text_field :category, :class=>"form-control" %>
+  </div>
+
+  <div class="action">
+    <%= f.submit class:"btn btn-success" %>
+
+  </div>
+
+<%end %>
